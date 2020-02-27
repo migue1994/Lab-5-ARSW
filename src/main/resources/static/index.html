@@ -18,12 +18,40 @@
 </head>
 
 <body>
-
-	<script>
-		function author_name() {
-  
+	
+	<input id="author" type="text">
+	<button onclick="getAuthorName()">Click Me</button>
+	
+	<script type="text/javascript">
+		function getAuthorName() {
+  			var authorName=document.getElementById("author").value;
+  			document.innerHTML=authorName
+  			alert(authorName)
+  			
+  			var name='LexLuthor';
+			var list=[];
+				
+			var data=apimock.getBlueprintsByAuthor(name);
+			alert(data)
+  			/*var app = (function (){
+  				
+  				var name='LexLuthor';
+  				var list=[];
+  				
+  				var data=apimock.getBlueprintsByAuthor(name);
+  				alert(data)
+  				
+  			});*/
+  			
+  			//alert(app)
+  			
+  			//var ans=$.getJSON("blueprints/" + authorName);
+  		
 		}
+		
+		
 	
 	</script>
+	
 </body>
 </html>

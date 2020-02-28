@@ -13,13 +13,10 @@ var app = (function () {
         mock.getBlueprintsByAuthor(author, getTable());
     };
 
-    var getTable = function (blueprint) {
-
-    };
 
     var getAuthorByName = function (author) {
         setName(author);
-        $("#authorName").text("BluePrint author: "+author);
+        $("#authorName > h3").text("BluePrint author: "+author);
         mock.getBlueprintsByAuthor(author, getTable);
         //var a = mock.getBlueprintsByAuthor(author, print);
     };
@@ -40,9 +37,9 @@ var app = (function () {
     	blueprints=getPoints(blueprints);
     	list=blueprints;
     	
-    	$("#bluePrintTable").empty(); 
+    	$("#blueprintTableBody").empty(); 
     	blueprints.map(function(blueprint){
-    		$("#blueprintTable").append(
+    		$("#blueprintTableBody").append(
     				"<tr> <td>"+blueprint.name +"</td> <td>"+blueprint.points+"</td> </tr>"
     		);
     	});

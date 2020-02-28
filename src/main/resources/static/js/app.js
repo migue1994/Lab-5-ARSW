@@ -1,4 +1,4 @@
- var mock = apimock;
+var mock = apimock;
 
 var app = (function () {
     var name;
@@ -6,29 +6,54 @@ var app = (function () {
 
     var setName = function (author) {
         name = author;
-    }
+    };
 
     var update = function (author) {
         setName(author);
         mock.getBlueprintsByAuthor(author, getTable());
-    }
+    };
 
     var getTable = function (blueprint) {
 
-    }
+    };
 
     var getAuthorByName = function (author) {
         setName(author);
-        $("#authorname").text(author);
-        var a = mock.getBlueprintsByAuthor(author, print);
-    }
+        $("#authorName").text("BluePrint author: "+author);
+        mock.getBlueprintsByAuthor(author, getTable);
+        //var a = mock.getBlueprintsByAuthor(author, print);
+    };
 
     var print = function (blueprint) {
         alert(blueprint.name)
-    }
+    };
+    
+    var getPoints=function(blueprints){
+    	return blueprints.map(function(blueprint){
+    		return { name: blueprint.name, points: blueprint.points.length};
+    	});
+    };
+    
+   
+    
+    var getTable=function(blueprints){
+    	blueprints=getPoints(blueprints);
+    	list=blueprints;
+    	
+    	$("#bluePrintTable").empty(); 
+    	blueprints.map(function(blueprint){
+    		$("#blueprintTable").append(
+    				"<tr> <td>"+blueprint.name +"</td> <td>"+blueprint.points+"</td> </tr>"
+    		);
+    	});
+    };
 
     return{
         get : getAuthorByName,
         update : update
     };
 })();
+
+
+
+

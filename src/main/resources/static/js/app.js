@@ -16,7 +16,7 @@ var app = (function () {
 
     var getAuthorByName = function (author) {
         setName(author);
-        $("#authorName > h3").text("BluePrint author: "+author);
+        $("#authorName").text(author);
         mock.getBlueprintsByAuthor(author, getTable);
         //var a = mock.getBlueprintsByAuthor(author, print);
     };

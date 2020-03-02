@@ -14,20 +14,28 @@
 	
 	    <script src="js/apimock.js"></script>
 	    <script src="js/app.js"></script>
+	    
+	    <link href="css/style.css" rel="stylesheet" type="text/css">
 	
 	</head>
 
 	<body>
 		<br/>
-		<form>
-		    <div style="text-align: center">
+		<form>			
+		    <div class="contenedor">
+		    	
+		    	<h1>Blueprints</h1>
+		    	<br/>
+		    
 		        <input id="author" type="text">
-		        <button type="button" onclick="app.get(author.value)">Click Me</button>
+		        <button type="button" onclick="app.get(author.value)">Get blueprints</button>
 		        <br><br>
-		
-		        <div id="authorName"><h3></h3></div>
 		        
-		        <br/>
+		 		
+		        <b>Author </b><output id="authorName"> </output>
+		        
+		        <br/><br/>
+		        
 		        
 		        <table id="blueprintTable" class="table">
 					<thead>
@@ -43,6 +51,11 @@
 				</table>
 		        
 		    </div>
+		    
+		    <div class="contenedor">
+		    
+		    </div>
+		    
 		</form>
 		
 	</body>

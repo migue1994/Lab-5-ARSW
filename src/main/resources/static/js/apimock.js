@@ -60,10 +60,10 @@ var apimock = (function () {
         },
 
         getBlueprintsByNameAndAuthor: function(name, author, callback) {
-            let blueprint = mockdata[author].find(function (blueprint) {
+            blueprint = mockdata[author].find(function(blueprint) {
                 return blueprint.name == name
             });
-            callback(blueprint)
+            callback(null, blueprint)
         }
     }
 

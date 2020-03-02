@@ -18,8 +18,13 @@ var app = (function () {
         setName(author);
         $("#authorName").text(author);
         mock.getBlueprintsByAuthor(author, getTable);
+        //var a = mock.getBlueprintsByAuthor(author, print);
     };
 
+    var print = function (blueprint) {
+        alert(blueprint.name)
+    };
+    
     var getPoints = function (blueprints) {
         return blueprints.map(function (blueprint) {
             return {name: blueprint.name, points: blueprint.points.length};
@@ -55,7 +60,9 @@ var app = (function () {
         get: getAuthorByName,
         getBlueprintsByNameAndAuthor : getBlueprintsByNameAndAuthor
     };
+    
 })();
+
 
 
 

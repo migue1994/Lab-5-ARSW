@@ -16,7 +16,7 @@ var app = (function () {
 
     var getAuthorByName = function (author) {
         setName(author);
-        $("#authorName > h3").text("BluePrint author: " + author);
+        $("#authorName").text(author);
         mock.getBlueprintsByAuthor(author, getTable);
     };
 
@@ -36,7 +36,7 @@ var app = (function () {
                 "<tr> " +
                 "<td id='tableName'>" + blueprint.name + "</td> " +
                 "<td>" + blueprint.points + "</td> " +
-                "<td><button class='btn' type='button' onclick='app.getBlueprintsByNameAndAuthor(\""+blueprint.name+ ", author.value)'>Pintar</button></td>"+
+                "<td><button class='btn-success' type='button' onclick='app.getBlueprintsByNameAndAuthor(\""+blueprint.name+ ", author.value)'>Pintar</button></td>"+
                 "</tr>"
             );
         });

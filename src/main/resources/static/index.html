@@ -1,55 +1,68 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-    <title>Blueprints</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blueprints</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="/webjars/jquery/3.1.0/jquery.min.js"></script>
-    <script src="/webjars/bootstrap/4.1.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="/webjars/bootstrap/4.1.2/css/bootstrap.min.css"/>
-    <script src="/webjars/jquery/3.1.0/jquery.min.js"></script>
-    <script src="/webjars/bootstrap/4.1.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="/webjars/bootstrap/4.1.2/css/bootstrap.min.css"/>
+	<script src="/webjars/jquery/3.1.0/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="/webjars/bootstrap/4.1.2/css/bootstrap.min.css"/>
+	<script src="/webjars/jquery/3.1.0/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="/webjars/bootstrap/4.1.2/css/bootstrap.min.css"/>
 
-    <script src="js/apimock.js"></script>
-    <script src="js/app.js"></script>
+	<script src="js/apimock.js"></script>
+	<script src="js/app.js"></script>
+
+	<link href="css/style.css" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
 <br/>
 <form>
-    <div style="text-align: center">
-        <input id="author" type="text" placeholder="Blueprint">
-        <button class="btn btn-outline-success" type="button" onclick="app.get(author.value)">Get Blueprint</button>
-        <br><br>
+	<div class="cabecera">
 
-        <div id="authorName">
-            <h3></h3>
-        </div>
+		<h1>Blueprints</h1>
+		<br/>
 
-        <br/>
-		<div style="margin: auto">
-			<table id="blueprintTable" class="table-bordered" style="margin: auto">
-				<thead class="thead-dark">
-				<tr>
-					<th scope="col">Blueprint Name</th>
-					<th scope="col">Number of points</th>
-					<th scope="col">Paint button</th>
-				</tr>
-				<tbody id="blueprintTableBody">
-				</tbody>
-			</table>
-			<br><br>
-		</div>
+		<input id="author" type="text">
+		<button type="button" class="btn-outline-primary" onclick="app.get(author.value)">Get blueprints</button>
+		<br><br>
 
-    </div>
-    <br>
-    <br>
-    <div style="text-align: center">
-        <canvas id="myCanvas" width="400" height="200" style="border:1px solid #000000;"></canvas>
-    </div>
+
+		<b>Author </b><output id="authorName"> </output>
+
+		<br/><br/>
+	</div>
+
+	<div class="contenedor1">
+		<table id="blueprintTable" class="table">
+			<thead>
+			<tr>
+				<th>Blueprint Name</th>
+				<th>Number of points</th>
+				<th>Paint</th>
+			</tr>
+			<tbody id="blueprintTableBody">
+
+			<tbody>
+
+			</tbody>
+		</table>
+	</div>
+
+	<div class="contenedor2">
+		<p>PruebaCanvas</p>
+
+		<canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;"></canvas>
+
+
+	</div>
+
+
+
 </form>
 
 </body>

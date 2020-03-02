@@ -1,0 +1,18 @@
+.cabecera{
+  height: 20%;
+  margin: 1% 1%;
+}
+
+.contenedor1{
+  width: 49%;
+  height: 99%;
+  margin: 1% 1%;
+  float: left;
+}
+
+.contenedor2{
+  width: 49%;
+  height: 99%;
+  margin: 1% 1%;
+  float: right;
+}

@@ -13,7 +13,6 @@ var app = (function () {
         mock.getBlueprintsByAuthor(author, getTable());
     };
 
-
     var getAuthorByName = function (author) {
         setName(author);
         $("#authorName").text(author);
@@ -34,21 +33,39 @@ var app = (function () {
         blueprints.map(function (blueprint) {
             $("#blueprintTableBody").append(
                 "<tr> " +
-                "<td id='tableName'>" + blueprint.name + "</td> " +
+                "<td>" + blueprint.name + "</td> " +
                 "<td>" + blueprint.points + "</td> " +
-                "<td><button class='btn-success' type='button' onclick='app.getBlueprintsByNameAndAuthor(\""+blueprint.name+ ", author.value)'>Pintar</button></td>"+
-                "</tr>"
+                "<td><form><button type='button' class='btn-outline-success' onclick='app.getBlueprintsByNameAndAuthor( \"" +blueprint.name +'" , ' +"author.value)' >Open</button></form></td>"+
+            "</tr>"
             );
         });
     };
 
     var getBlueprintsByNameAndAuthor = function (name, author) {
-        alert(name + " "+ author);
         mock.getBlueprintsByNameAndAuthor(name, author, getCanvas);
     };
 
     var getCanvas = function (blueprint) {
-        alert(blueprint.points)
+        $("#currentBluePrint").text("prueba: "+ blueprint.name);
+        var can=document.getElementById("myCanvas");
+        var ctx=can.getContext("2d");
+
+        ctx.clearRect(0, 0, can.width, can.height);
+        ctx.beginPath();
+
+        var aux;
+
+        blueprint.points.map(function(point){
+            if(!aux){
+                aux=point;
+                ctx.moveTo(aux.x, aux.y);
+            }
+            else{
+                ctx.lineTo(point.x, point.y);
+                //draw
+                ctx.stroke();
+            }
+        });
     };
 
     return {

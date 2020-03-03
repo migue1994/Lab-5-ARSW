@@ -1,4 +1,4 @@
-var mock = apimock;
+var mock = apiclient;
 
 var app = (function () {
     var authorName;
@@ -8,14 +8,12 @@ var app = (function () {
         authorName = author;
     };
 
-    var update = function (author) {
-        setName(author);
-        mock.getBlueprintsByAuthor(author, getTable());
-    };
 
-    var getAuthorByName = function (author) {
+    var getPlansByName = function (author) {
         setName(author);
         $("#authorName").text(author);
+    	$("#authorPlane").text(author+"'s blueprints:");
+
         mock.getBlueprintsByAuthor(author, getTable);
     };
 
@@ -37,9 +35,6 @@ var app = (function () {
     var getTable = function (blueprints) {
         blueprints = getPoints(blueprints);
         list = blueprints;
-
-    	$("#authorPlane").text(authorName+"'s blueprints:");
-
         
         $("#blueprintTableBody").empty();
         blueprints.map(function (blueprint) {
@@ -84,10 +79,8 @@ var app = (function () {
     };
     
    
-    
-    
     return {
-        get: getAuthorByName,
+        update: getPlansByName,
         getBlueprintsByNameAndAuthor : getBlueprintsByNameAndAuthor
     };
 })();

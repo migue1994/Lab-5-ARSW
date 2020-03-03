@@ -14,7 +14,7 @@ var app = (function () {
         $("#authorName").text(author);
     	$("#authorPlane").text(author+"'s blueprints:");
 
-        mock.getBlueprintsByAuthor(author, getTable);
+    	mock.getBlueprintsByAuthor(author, getTable);
     };
 
     var getPoints = function (blueprints) {

@@ -1,11 +1,11 @@
 var mock = apimock;
 
 var app = (function () {
-    var name;
+    var authorName;
     var list = [];
 
     var setName = function (author) {
-        name = author;
+        authorName = author;
     };
 
     var update = function (author) {
@@ -24,21 +24,36 @@ var app = (function () {
             return {name: blueprint.name, points: blueprint.points.length};
         });
     };
-
+    
+    var getPointsSum = function(blueprints) {
+    	// Función reductora sobre cada elemento en la lista blueprints
+    	var sumPoints=blueprints.reduce(function(suma, blueprint){
+    		return suma+blueprint.points;
+    	}, 0);
+    	
+    	$("#pointsSum").text("Total user points: " + sumPoints);
+    }; 
+    
     var getTable = function (blueprints) {
         blueprints = getPoints(blueprints);
         list = blueprints;
 
+    	$("#authorPlane").text(authorName+"'s blueprints:");
+
+        
         $("#blueprintTableBody").empty();
         blueprints.map(function (blueprint) {
             $("#blueprintTableBody").append(
                 "<tr> " +
                 "<td>" + blueprint.name + "</td> " +
                 "<td>" + blueprint.points + "</td> " +
-                "<td><form><button type='button' class='btn-outline-success' onclick='app.getBlueprintsByNameAndAuthor( \"" +blueprint.name +'" , ' +"author.value)' >Open</button></form></td>"+
+                "<td><button type='button' class='btn-outline-success' onclick='app.getBlueprintsByNameAndAuthor( \"" +blueprint.name + '" , "' + authorName + "\")' >Open</button></td>"+
             "</tr>"
             );
         });
+
+        getPointsSum(blueprints);
+
     };
 
     var getBlueprintsByNameAndAuthor = function (name, author) {
@@ -46,7 +61,7 @@ var app = (function () {
     };
 
     var getCanvas = function (blueprint) {
-        $("#currentBluePrint").text("prueba: "+ blueprint.name);
+        $("#currentBluePrint").text("Current blueprint: "+blueprint.name);
         var can=document.getElementById("myCanvas");
         var ctx=can.getContext("2d");
 
@@ -67,7 +82,10 @@ var app = (function () {
             }
         });
     };
-
+    
+   
+    
+    
     return {
         get: getAuthorByName,
         getBlueprintsByNameAndAuthor : getBlueprintsByNameAndAuthor

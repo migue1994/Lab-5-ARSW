@@ -22,11 +22,11 @@ And we go to the localhost address in our browser. There will be the main page o
 
 After to create the directory that contains the javascript files, we've created the next index.html file:
 
-![](/src/main/resources/img/formulario.png)
+![](src/main/resources/img/formulario.png)
 
 The code shown above belongs to a form that contains an input and a button, where we can query any author in as long as it is in the apimok.js file.
 
 Once we do the query, a table will be show with the logs of the blueprints names and the number of points that owns. The code bellow correspond to the html block that makes the table.
 
-![](/src/main/resources/img/tabla_html.png)
+![](src/main/resources/img/tabla_html.png)
 

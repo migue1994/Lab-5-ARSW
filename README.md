@@ -36,12 +36,38 @@ Once we've copied the aplimock file to the js folder and put this files as resou
 
 ![capturaJs](https://github.com/migue1994/Lab-5-ARSW/blob/master/src/main/resources/img/capturaJs.PNG)
 
-In the image above we can see the getPansByName function and getBlueprintsByNameAndAuthor function, wich use the functions contained in the apimock.js file, to execute the callbacks and call other function as follows
+In the image above we can see the getPansByName function, wich use the get getBlueprintsByAuthor function contained in the apimock.js file, to execute the callbacks and call other function as follows
 
 ![tablaJs](https://github.com/migue1994/Lab-5-ARSW/blob/master/src/main/resources/img/tableJs.PNG)
 
 The above code allows update the html table through a async method, wich allow modify the table without reload the page
+Now we open the localhost address in the browser and we got this.
 
-That code of the table, has a block that contains a button wich calls a function that makes a canvas where the points of the blueprint are displayed in, this function is show in the bellow image
+![withoutCanvas](https://github.com/migue1994/Lab-5-ARSW/blob/master/src/main/resources/img/withoutCanvas.PNG)
+
+
+
+# Next Week
+
+the code of the table, has a block that contains a button, wich calls a function that makes a canvas where the points of the blueprint are displayed in, this function is show in the bellow image
 
 ![canvasJs](https://github.com/migue1994/Lab-5-ARSW/blob/master/src/main/resources/img/canvasJs.PNG)
+
+In the app.js file, we creted a getBlueprintsByAuthorAndName function that use the getBlueprintsByAuthorAndName function located in the apimock.js file, it query the blueprint using the author name and the blueprint name to get an object with only the points contains in that blueprint, this function has a callback that execute the getCanvas function to draw the blueprint in the browser, this function looks like as follows
+
+![GetBlueprintByauthorandname](https://github.com/migue1994/Lab-5-ARSW/blob/master/src/main/resources/img/getBlueprintByAuthorAndName.PNG)
+
+So if we open the browser in the localhost address, we'll see the next images
+
+![TableBrowser1](https://github.com/migue1994/Lab-5-ARSW/blob/master/src/main/resources/img/tableBrowser1.PNG)
+![TableBrowser2](https://github.com/migue1994/Lab-5-ARSW/blob/master/src/main/resources/img/tableBrowser2.PNG)
+
+To connect with the API rest, we've created a new file called apiclient, this file contains the next code
+
+![apiclient](https://github.com/migue1994/Lab-5-ARSW/blob/master/src/main/resources/img/Apiclient.PNG)
+
+Now, if we execute the springboot service, we could do the same queries but this time the repository is the inMemoryBlueprintPersistance class, so it displays the next blueprints
+
+![persistence1](https://github.com/migue1994/Lab-5-ARSW/blob/master/src/main/resources/img/persistance1.PNG)
+
+![persistence2](https://github.com/migue1994/Lab-5-ARSW/blob/master/src/main/resources/img/persistance%202.PNG)

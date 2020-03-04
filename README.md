@@ -22,7 +22,7 @@ And we go to the localhost address in our browser. There will be the main page o
 
 After to create the directory that contains the javascript files, we've created the next index.html file:
 
-![](src/main/resources/img/formulario.png)
+[](https://github.com/migue1994/Lab-5-ARSW/blob/master/src/main/resources/img/formulario.PNG)
 
 The code shown above belongs to a form that contains an input and a button, where we can query any author in as long as it is in the apimok.js file.
 

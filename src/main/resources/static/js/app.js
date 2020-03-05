@@ -1,8 +1,10 @@
-var mock = apiclient;
+var mock = apimock;
 
 var app = (function () {
     var authorName;
     var list = [];
+
+    let num = 0;
 
     var setName = function (author) {
         authorName = author;
@@ -77,11 +79,21 @@ var app = (function () {
             }
         });
     };
-    
+
+    var restSwitch = function () {
+        if (num == 0){
+            mock = apiclient;
+            num++;
+        }else {
+            num = 0;
+            mock = apimock;
+        }
+    }
    
     return {
         update: getPlansByName,
-        getBlueprintsByNameAndAuthor : getBlueprintsByNameAndAuthor
+        getBlueprintsByNameAndAuthor : getBlueprintsByNameAndAuthor,
+        restSwitch : restSwitch
     };
 })();
 

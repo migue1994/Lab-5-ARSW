@@ -28,11 +28,8 @@ The code shown above belongs to a form that contains an input and a button, wher
 
 Once we do the query, a table will be show with the logs of the blueprints names and the number of points that owns. The code bellow correspond to the html block that makes the table.
 
-<<<<<<< HEAD
-![](img/tabla_html.PNG)
-=======
+
 ![tablaHtml](https://github.com/migue1994/Lab-5-ARSW/blob/master/src/main/resources/img/tabla_html.PNG)
->>>>>>> 9038fe89416ff68df833b6a8e62eb9a2dc60d32f
 
 # Fronted Logic
 
@@ -48,8 +45,6 @@ The above code allows update the html table through a async method, wich allow m
 Now we open the localhost address in the browser and we got this.
 
 ![withoutCanvas](https://github.com/migue1994/Lab-5-ARSW/blob/master/src/main/resources/img/withoutCanvas.PNG)
-
-
 
 # Next Week
 

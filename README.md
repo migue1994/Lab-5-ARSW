@@ -71,3 +71,5 @@ Now, if we execute the springboot service, we could do the same queries but this
 ![persistence1](https://github.com/migue1994/Lab-5-ARSW/blob/master/src/main/resources/img/persistance1.PNG)
 
 ![persistence2](https://github.com/migue1994/Lab-5-ARSW/blob/master/src/main/resources/img/persistance%202.PNG)
+
+Finally, we put a button wich change the reference repository, when we start the app, the repository by default is the apimock.js, if we ckick on change repository button, the reference change to the api rest repository and vice versa.
